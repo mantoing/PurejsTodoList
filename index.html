@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      ul {
+        list-style-type: none;
+      }
+      body .tolist.checked {
+        text-decoration: line-through;
+      }
+    </style>
+    <title>TodoList</title>
+  </head>
+  <body>
+    <h1>TodoList</h1>
+    <div class="container">
+      <input id="toinput" type="text" placeholder="New Task" />
+      <button onclick="addBtn()">+</button>
+      <ul id="tolist"></ul>
+    </div>
+    <script src="todo.js"></script>
+  </body>
+</html>
