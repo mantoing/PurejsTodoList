@@ -1,3 +1,20 @@
+document.addEventListener("DOMContentLoaded", function () {
+  loadTotoList();
+});
+
+function loadTotoList() {
+  let storedItems = JSON.parse(localStorage.getItem("todoItems")) || [];
+  storedItems.forEach(function (item) {
+    appendTodoItem(item);
+  });
+}
+
+function appendTodoItem(todoItem) {
+  let doList = document.getElementById("tolist");
+  let toItem = document.createElement("li");
+  toItem.className = "tolist";
+}
+
 function enableEditing(element) {
   let oldValue = element.innerHTML;
   let inputField = document.createElement("input");
