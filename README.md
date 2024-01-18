@@ -4,7 +4,8 @@
   
 <img height="100px" alt="42GG_neon_logo" src="https://github.com/42organization/42gg.client/assets/57761286/63f1e8b1-d254-407c-ae3d-9cf60166ed41">
 
-
+#배포 사이트
+  https://mantoing.github.io/PurejsTodoList/
 ## 공통 조건
 
 - 온보딩 프로젝트는 개인 계정으로 fork하여 진행하고 PR로 제출합니다.
