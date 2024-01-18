@@ -9,36 +9,23 @@ function loadTotoList() {
   });
 }
 
+function saveTodoList(items) {
+  localStorage.setItem("todoItems", JSON.stringify(items));
+}
+
+function updateLocalStorage() {
+  let todoItemList = [];
+  let doList = document.getElementById("tolist");
+  let todoListItems = doList.getElementsByClassName("text-block");
+
+  for (let item of todoListItems) {
+    todoItemList.push(item.innerHTML);
+  }
+  saveTodoList(todoItemList);
+}
+
 function appendTodoItem(todoItem) {
   let doList = document.getElementById("tolist");
-  let toItem = document.createElement("li");
-  toItem.className = "tolist";
-}
-
-function enableEditing(element) {
-  let oldValue = element.innerHTML;
-  let inputField = document.createElement("input");
-  inputField.type = "text";
-  inputField.value = oldValue;
-
-  inputField.addEventListener("blur", function () {
-    element.innerHTML = inputField.value;
-  });
-
-  element.innerHTML = "";
-  element.appendChild(inputField);
-  inputField.focus();
-}
-
-function addBtn() {
-  let toInput = document.getElementById("toinput");
-  let doList = document.getElementById("tolist");
-  console.log(toInput.value);
-  if (!toInput.value) {
-    alert("Plz input value");
-    return;
-  }
-
   let toItem = document.createElement("li");
   toItem.className = "tolist";
 
@@ -53,28 +40,58 @@ function addBtn() {
     } else {
       textBlock.style.textDecoration = "none";
     }
+    updateLocalStorage();
   });
 
   let textBlock = document.createElement("span");
   textBlock.className = "text-block";
-  textBlock.innerHTML = toInput.value;
+  textBlock.innerHTML = todoItem;
 
   let changeBtn = document.createElement("span");
   changeBtn.className = "changeBtn";
-  changeBtn.innerHTML = "&nbsp;&nbsp;&nbsp change";
+  changeBtn.innerHTML = "&nbsp;&nbsp;&nbspchange";
   changeBtn.addEventListener("click", function () {
     enableEditing(textBlock);
   });
+
   let deleteBtn = document.createElement("span");
   deleteBtn.className = "deleteBtn";
   deleteBtn.innerHTML = "&nbsp;&nbsp;&nbsp❌";
   deleteBtn.addEventListener("click", function () {
     toItem.remove();
+    updateLocalStorage();
   });
   toItem.appendChild(toCheckBox);
   toItem.appendChild(textBlock);
   toItem.appendChild(changeBtn);
   toItem.appendChild(deleteBtn);
   doList.appendChild(toItem);
+}
+
+function enableEditing(element) {
+  let oldValue = element.innerHTML;
+  let inputField = document.createElement("input");
+  inputField.type = "text";
+  inputField.value = oldValue;
+
+  inputField.addEventListener("blur", function () {
+    element.innerHTML = inputField.value;
+    updateLocalStorage();
+  });
+
+  element.innerHTML = "";
+  element.appendChild(inputField);
+  inputField.focus();
+}
+
+function addBtn() {
+  let toInput = document.getElementById("toinput");
+  if (!toInput.value) {
+    alert("Plz input value");
+    return;
+  }
+
+  appendTodoItem(toInput.value);
+  updateLocalStorage();
   toInput.value = "";
 }
