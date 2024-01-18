@@ -45,26 +45,26 @@ function appendTodoItem(todoItem) {
 
   let textBlock = document.createElement("span");
   textBlock.className = "text-block";
-  textBlock.innerHTML = todoItem;
+  textBlock.innerHTML = " &nbsp;&nbsp;" + todoItem;
 
   let changeBtn = document.createElement("span");
   changeBtn.className = "changeBtn";
-  changeBtn.innerHTML = "&nbsp;&nbsp;&nbspchange";
+  changeBtn.innerHTML = " change";
   changeBtn.addEventListener("click", function () {
     enableEditing(textBlock);
   });
 
   let deleteBtn = document.createElement("span");
   deleteBtn.className = "deleteBtn";
-  deleteBtn.innerHTML = "&nbsp;&nbsp;&nbsp❌";
+  deleteBtn.innerHTML = " ❌";
   deleteBtn.addEventListener("click", function () {
     toItem.remove();
     updateLocalStorage();
   });
   toItem.appendChild(toCheckBox);
-  toItem.appendChild(textBlock);
-  toItem.appendChild(changeBtn);
   toItem.appendChild(deleteBtn);
+  toItem.appendChild(changeBtn);
+  toItem.appendChild(textBlock);
   doList.appendChild(toItem);
 }
 
