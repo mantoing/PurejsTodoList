@@ -36,6 +36,12 @@
 
 <img width="500" alt="image" src="https://github.com/Pierrot-jang-pilkyu/ft_transcendence-front_end/assets/90916425/21f6b9ef-0992-4e66-a073-9a2f28ceb0a5">
 
+## 로컬스토리지
+<img width="1680" alt="스크린샷 2024-01-26 오후 7 49 36" src="https://github.com/mantoing/PurejsTodoList/assets/90916425/dd689d88-a612-470d-9eb6-f8e62637904d">
+
+<img width="1680" alt="스크린샷 2024-01-26 오후 7 51 26" src="https://github.com/mantoing/PurejsTodoList/assets/90916425/1a8be4d2-0309-4fbd-90a0-6a2f61619648">
+
+
 ## 참고
 
 - 데이터 관리는 하단의 방식 중 하나 선택하시면 됩니다.
